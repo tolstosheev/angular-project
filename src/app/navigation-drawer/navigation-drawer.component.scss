@@ -1,0 +1,48 @@
+.container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 360px;
+  padding: 12px;
+  -ms-overflow-y: hidden;
+  &__header{
+    background: inherit;
+  }
+  &__list{
+    padding: 0;
+    &__item{
+      width: 336px;
+      --mdc-list-list-item-one-line-container-height: 56px;
+      padding-inline: 12px;
+      &__content {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, min-content);
+        gap: 4px;
+        &__icon {
+
+        }
+
+        &__name {
+
+        }
+      }
+    }
+  }
+  &__line{
+    border: none;
+    border-top: 1px solid white;
+    margin: 0;
+    place-self: center;
+    width: 310px;
+  }
+
+}
+
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

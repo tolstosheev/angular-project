@@ -1,0 +1,104 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="sidenav__header">
+      Mail
+    </mat-toolbar>
+    <mat-nav-list class="sidenav__list">
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">inbox</mat-icon>
+          <span class="sidenav__list__item__content__name">Inbox</span>
+        </div>
+      </a>
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">outbox</mat-icon>
+          <span class="sidenav__list__item__content__name">Outbox</span>
+        </div>
+      </a>
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">favorite</mat-icon>
+          <span class="sidenav__list__item__content__name">Favorites</span>
+        </div>
+      </a>
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">delete</mat-icon>
+          <span class="sidenav__list__item__content__name">Trash</span>
+        </div>
+      </a>
+    </mat-nav-list>
+    <hr class="sidenav__line">
+    <mat-nav-list class="sidenav__list">
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
+    </mat-nav-list>
+    <hr class="sidenav__line">
+    <mat-nav-list class="sidenav__list">
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
+      <a class="sidenav__list__item" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      @if (isHandset$ | async) {
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+      <span>angular-project</span>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
