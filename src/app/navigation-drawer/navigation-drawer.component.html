@@ -3,10 +3,12 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar class="sidenav__header">
-      Mail
-    </mat-toolbar>
     <mat-nav-list class="sidenav__list">
+      <a class="sidenav__list__item sidenav__list__item--header" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <span class="sidenav__list__item__content__name">Mail</span>
+        </div>
+      </a>
       <a class="sidenav__list__item" mat-list-item href="#">
         <div class="sidenav__list__item__content">
           <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">inbox</mat-icon>
@@ -34,6 +36,11 @@
     </mat-nav-list>
     <hr class="sidenav__line">
     <mat-nav-list class="sidenav__list">
+      <a class="sidenav__list__item sidenav__list__item--header" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
       <a class="sidenav__list__item" mat-list-item href="#">
         <div class="sidenav__list__item__content">
           <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
@@ -61,6 +68,11 @@
     </mat-nav-list>
     <hr class="sidenav__line">
     <mat-nav-list class="sidenav__list">
+      <a class="sidenav__list__item sidenav__list__item--header" mat-list-item href="#">
+        <div class="sidenav__list__item__content">
+          <span class="sidenav__list__item__content__name">Label</span>
+        </div>
+      </a>
       <a class="sidenav__list__item" mat-list-item href="#">
         <div class="sidenav__list__item__content">
           <mat-icon class="sidenav__list__item__content__icon" aria-label="Side nav toggle icon">folder</mat-icon>
@@ -88,17 +100,58 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
       @if (isHandset$ | async) {
-        <button
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="drawer.toggle()">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
+        <mat-nav-list class="rail">
+          <div class="rail__header">
+            <button
+              class="rail__header__button"
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <button
+              class="rail__header__button rail__header__edit"
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button>
+              <mat-icon aria-label="Side nav toggle icon">edit</mat-icon>
+            </button>
+          </div>
+          <div class="rail__main">
+            <div class="rail__main__item">
+              <button
+                class="rail__header__item__button"
+                type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button>
+                <mat-icon aria-label="Side nav toggle icon">mail</mat-icon>
+              </button>
+              <span class="rail__main__item__name">Mail</span>
+            </div>
+            <div class="rail__main__item">
+              <button
+                class="rail__header__item__button"
+                type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button>
+                <mat-icon aria-label="Side nav toggle icon">folder</mat-icon>
+              </button>
+              <span class="rail__main__item__name">Label</span>
+            </div>
+            <div class="rail__main__item">
+              <button
+                class="rail__header__item__button"
+                type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button>
+                <mat-icon aria-label="Side nav toggle icon">folder</mat-icon>
+              </button>
+              <span class="rail__main__item__name">Label</span>
+            </div>
+          </div>
+        </mat-nav-list>
       }
-      <span>angular-project</span>
-    </mat-toolbar>
   </mat-sidenav-content>
 </mat-sidenav-container>
