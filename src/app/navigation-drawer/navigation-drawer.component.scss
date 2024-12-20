@@ -1,5 +1,4 @@
-.mat-mdc-icon-button.mat-mdc-button-ripple.rail__header__edit {
-  border: 16px !important;
+:host{
 }
 
 
@@ -29,7 +28,6 @@
         &__icon {
 
         }
-
         &__name {
           font-size: 14px;
         }
@@ -47,25 +45,30 @@
 }
 .rail{
   font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 16px;
   padding-inline: 24px;
-  padding-top: 12px;
   display: grid;
   width: 80px;
   grid-template-rows: repeat(2, min-content);
-  gap: 30px;
   &__header{
     display: grid;
-    place-self: center;
+    place-items: center;
+    align-items: center;
     grid-template-rows: auto min-content;
-    &__edit{
-      border-radius: 16px;
-    }
+    padding: 44px 0 56px;
+    gap: 4px;
+
+
   }
   &__main{
     display: grid;
     grid-template-rows: auto min-content;
+    gap: 12px;
     &__item{
       display: grid;
+      gap: 4px;
       grid-template-rows: repeat(2, min-content);
       place-self: center;
       text-align: center;
@@ -74,7 +77,9 @@
 
 }
 
-
+.mat-mdc-button-touch-target{
+  width: 80px;
+}
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;

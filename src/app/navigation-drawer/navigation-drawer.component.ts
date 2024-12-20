@@ -31,4 +31,9 @@ export class NavigationDrawerComponent {
       map(result => result.matches),
       shareReplay()
     );
+  isSmall$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Small)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 }
