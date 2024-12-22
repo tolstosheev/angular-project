@@ -1,8 +1,9 @@
 <mat-sidenav-container class="container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+      [attr.role]="(isLarge$) ? 'dialog' : 'navigation'"
+      [mode]="(isLarge$) ? 'over' : 'side'"
+      [opened]="((isLarge$ | async) === true)"
+               [disableClose]="isLarge$ | async">
     <mat-nav-list class="sidenav__list">
       <a class="sidenav__list__item sidenav__list__item--header" mat-list-item href="#">
         <div class="sidenav__list__item__content">
@@ -100,7 +101,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-      @if (isHandset$ | async) {
+      @if (isSmall$ | async) {
         <mat-nav-list class="rail">
           <div class="rail__header">
             <button
@@ -153,5 +154,8 @@
           </div>
         </mat-nav-list>
       }
+    @if (isXSmall$ | async){
+      <p>[eq,vev,osvpseov</p>
+    }
   </mat-sidenav-content>
 </mat-sidenav-container>
