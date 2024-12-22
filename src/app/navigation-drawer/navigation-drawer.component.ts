@@ -26,12 +26,12 @@ import {AsyncPipe} from '@angular/common';
 export class NavigationDrawerComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
-  isLarge$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Large, Breakpoints.Medium])
+  isLarge$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.XLarge, Breakpoints.Large])
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
-  isSmall$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Small)
+  isSmall$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Medium, Breakpoints.Small])
     .pipe(
       map(result => result.matches),
       shareReplay()
