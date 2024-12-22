@@ -44,6 +44,7 @@
 
 }
 .rail{
+  position: fixed;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -76,7 +77,13 @@
   }
 
 }
-
+.footer-bar{
+  display: grid;
+  grid-template-columns: auto min-content;
+  &__item{
+    display: inline;
+  }
+}
 .mat-mdc-button-touch-target{
   width: 80px;
 }
@@ -85,3 +92,4 @@
   top: 0;
   z-index: 1;
 }
+
