@@ -1,0 +1,6 @@
+.item {
+  display: grid;
+  grid-template-rows:  repeat(2, min-content);
+  place-self: center;
+  text-align: center;
+}

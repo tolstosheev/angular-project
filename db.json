@@ -1,0 +1,78 @@
+{
+  "sidenav": [
+    {
+      "icon": "",
+      "name": "Mail"
+    },
+    {
+      "icon": "inbox",
+      "name": "Inbox"
+    },
+    {
+      "icon": "outbox",
+      "name": "Outbox"
+    },
+    {
+      "icon": "favorites",
+      "name": "Favorites"
+    },
+    {
+      "icon": "delete",
+      "name": "Trash"
+    },
+    {
+      "icon": "",
+      "name": "Labels"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    },
+    {
+      "icon": "",
+      "name": "Labels"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    }
+  ],
+  "sidenav-content": [
+    {
+      "icon": "mail",
+      "name": "Mail"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    },
+    {
+      "icon": "folder",
+      "name": "Label"
+    }
+  ]
+}

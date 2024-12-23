@@ -1,0 +1,17 @@
+.item{
+  width: 336px;
+  --mdc-list-list-item-one-line-container-height: 56px;
+  padding-inline: 12px;
+  &__content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, min-content);
+    gap: 4px;
+    &__icon {
+
+    }
+    &__name {
+      font-size: 14px;
+    }
+  }
+}

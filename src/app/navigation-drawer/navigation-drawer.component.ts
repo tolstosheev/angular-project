@@ -1,13 +1,17 @@
 import {Component, inject} from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
-import {AsyncPipe} from '@angular/common';
+import {AsyncPipe, NgForOf} from '@angular/common';
+import {NavigationService} from '../navigation.service';
+import {SidenavItem} from './sidenav-item';
+import {SidenavItemComponent} from '../sidenav-item/sidenav-item.component';
+import {SidenavContentItemComponent} from '../sidenav-content-item/sidenav-content-item.component';
+import {ContentComponent} from '../content/content.component';
+import {BreakpointsService} from '../breakpoints.service';
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -22,24 +26,26 @@ import {AsyncPipe} from '@angular/common';
     MatListModule,
     MatIconModule,
     AsyncPipe,
+    SidenavItemComponent,
+    NgForOf,
+    SidenavContentItemComponent,
+    ContentComponent,
   ]
 })
 export class NavigationDrawerComponent {
-  private breakpointObserver = inject(BreakpointObserver);
-
-  isLarge$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.XLarge, Breakpoints.Large])
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
-  isSmall$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Medium, Breakpoints.Small])
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
-  isXSmall$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.XSmall)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+  breakpointService: BreakpointsService= inject(BreakpointsService);
+  navigationService: NavigationService = inject(NavigationService);
+  sidenavList: SidenavItem[] = [];
+  contentList: SidenavItem[] = [];
+  isLarge$: Observable<boolean> = this.breakpointService.isLarge$;
+  isSmall$: Observable<boolean> = this.breakpointService.isSmall$;
+  isXSmall$: Observable<boolean> = this.breakpointService.isXSmall$;
+  constructor() {
+    this.navigationService.getSidenavItems().then((sidenavList: SidenavItem[]) => {
+      this.sidenavList = sidenavList;
+    })
+    this.navigationService.getContentItems().then((contentList: SidenavItem[]) => {
+      this.contentList = contentList;
+    })
+  }
 }
