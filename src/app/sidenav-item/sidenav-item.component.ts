@@ -10,7 +10,6 @@ import {MatIcon} from '@angular/material/icon';
     MatIcon
   ],
   templateUrl: './sidenav-item.component.html',
-  styleUrl: './sidenav-item.component.scss'
 })
 export class SidenavItemComponent {
   @Input() sidenavList!: SidenavItem;

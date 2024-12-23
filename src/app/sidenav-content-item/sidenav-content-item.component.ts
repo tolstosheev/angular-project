@@ -9,8 +9,7 @@ import {SidenavItem} from '../navigation-drawer/sidenav-item';
         MatIcon,
         MatIconButton
     ],
-  templateUrl: './sidenav-content-item.component.html',
-  styleUrl: './sidenav-content-item.component.scss'
+  templateUrl: './sidenav-content-item.component.html'
 })
 export class SidenavContentItemComponent {
   @Input() contentList!: SidenavItem;

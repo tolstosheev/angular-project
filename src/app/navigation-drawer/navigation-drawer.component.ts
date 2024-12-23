@@ -17,7 +17,6 @@ import {Observable} from 'rxjs';
 @Component({
   selector: 'app-navigation-drawer',
   templateUrl: './navigation-drawer.component.html',
-  styleUrl: './navigation-drawer.component.scss',
   standalone: true,
   imports: [
     MatToolbarModule,

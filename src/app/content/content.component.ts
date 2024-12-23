@@ -10,7 +10,6 @@ import {BreakpointsService} from '../breakpoints.service';
     AsyncPipe
   ],
   templateUrl: './content.component.html',
-  styleUrl: './content.component.scss'
 })
 export class ContentComponent {
   breakpointService: BreakpointsService= inject(BreakpointsService);
