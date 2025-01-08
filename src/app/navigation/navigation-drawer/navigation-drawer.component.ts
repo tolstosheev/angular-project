@@ -5,12 +5,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import {AsyncPipe, NgForOf} from '@angular/common';
-import {NavigationService} from '../navigation.service';
 import {SidenavItem} from './sidenav-item';
 import {SidenavItemComponent} from '../sidenav-item/sidenav-item.component';
 import {SidenavContentItemComponent} from '../sidenav-content-item/sidenav-content-item.component';
-import {ContentComponent} from '../content/content.component';
-import {BreakpointsService} from '../breakpoints.service';
+import {ContentComponent} from '../../content/content.component';
+import {BreakpointsService} from '../../../service/breakpoints.service';
 import {Observable} from 'rxjs';
 
 
@@ -26,25 +25,24 @@ import {Observable} from 'rxjs';
     MatIconModule,
     AsyncPipe,
     SidenavItemComponent,
-    NgForOf,
     SidenavContentItemComponent,
     ContentComponent,
+    NgForOf,
   ]
 })
 export class NavigationDrawerComponent {
   breakpointService: BreakpointsService= inject(BreakpointsService);
-  navigationService: NavigationService = inject(NavigationService);
-  sidenavList: SidenavItem[] = [];
-  contentList: SidenavItem[] = [];
+  sidenavList: SidenavItem[] = [
+    {icon: 'computer', name: 'Projects'},
+    {icon: 'bookmarks', name: 'Task manager'},
+    {icon: 'inbox', name: 'Inbox'},
+    {icon: 'contacts', name: 'Contacts'},
+
+  ];
   isLarge$: Observable<boolean> = this.breakpointService.isLarge$;
   isSmall$: Observable<boolean> = this.breakpointService.isSmall$;
   isXSmall$: Observable<boolean> = this.breakpointService.isXSmall$;
   constructor() {
-    this.navigationService.getSidenavItems().then((sidenavList: SidenavItem[]) => {
-      this.sidenavList = sidenavList;
-    })
-    this.navigationService.getContentItems().then((contentList: SidenavItem[]) => {
-      this.contentList = contentList;
-    })
+
   }
 }

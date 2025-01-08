@@ -1,13 +1,15 @@
 import {Component, inject} from '@angular/core';
 import {Observable} from 'rxjs';
 import {AsyncPipe, NgStyle} from '@angular/common';
-import {BreakpointsService} from '../breakpoints.service';
+import {BreakpointsService} from '../../service/breakpoints.service';
+import {HeaderComponent} from '../header/header.component';
 
 @Component({
   selector: 'app-content',
   imports: [
     NgStyle,
-    AsyncPipe
+    AsyncPipe,
+    HeaderComponent
   ],
   templateUrl: './content.component.html',
 })
