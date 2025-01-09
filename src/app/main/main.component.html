@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="main__title">
+    <h1>Project name</h1>
+  </div>
+  <div class="main__info" [ngClass]="{'main__info--small': (isSmall$ | async), 'main__info--xsmall' : (isXSmall$ | async)}">
+    <mat-card>
+      <mat-card-content class="main__info__details">
+        <div class="main__info__details__titles">
+          <span>Date added:</span>
+          <span>Deadline:</span>
+          <span>Participants:</span>
+        </div>
+        <div class="main__info__details__value">
+          <span>12/04/2021</span>
+          <span>12/04/2021</span>
+          <span>Adyl, Azhar, Arthur</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content class="main__info__description">
+        <p>Менеджер для внутреннего пользования, предназначенный для учета статистики и трекинга задач.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content class="main__info__details">
+        <div class="main__info__details__titles">
+          <span>All tasks:</span>
+          <span>Done:</span>
+          <span>Frozen:</span>
+        </div>
+        <div class="main__info__details__value">
+          <span>6</span>
+          <span>0</span>
+          <span>1</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

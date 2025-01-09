@@ -36,9 +36,9 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    @if (isSmall$ | async) {
-      <mat-nav-list class="rail">
-        <div class="rail__header">
+    @if (!(isLarge$ | async)) {
+      <mat-nav-list class="rail" [ngClass]="{'rail--xsmall': (isXSmall$ | async)}">
+        <div class="rail__header" [ngClass]="{'rail__header--xsmall': (isXSmall$ | async)}">
           <button
             class="rail__header__button"
             type="button"
@@ -48,6 +48,7 @@
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
           </button>
         </div>
+        @if (isSmall$ | async){
         <div class="rail__main">
           <app-sidenav-content-item
             *ngFor="let item of sidenavList"
@@ -55,20 +56,10 @@
             [name]="item.name">
           </app-sidenav-content-item>
         </div>
+        }
       </mat-nav-list>
     }
     @if (isXSmall$ | async){
-      <mat-toolbar aria-posinset="bottom" class="header-bar">
-        <button
-          class="header=bar__button"
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="drawer.toggle()">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-        <p>Angular-project</p>
-      </mat-toolbar>
       <div class="bar">
         <app-sidenav-content-item
           *ngFor="let item of sidenavList"

@@ -1,3 +1,4 @@
-<div class="content" [ngStyle]="{'margin-left': (isSmall$ | async) ? '128px' : '0', 'margin-bottom': (isXSmall$ | async) ? '100px' : '0', 'padding-inline': (isXSmall$ | async) ? '10px' : '0'}">
+<div class="content" [ngStyle]="{'margin-left': (marginLeft$ | async), 'margin-bottom': (isXSmall$ | async) ? '100px' : '0', 'padding-inline': (isXSmall$ | async) ? '10px' : '0'}">
   <app-header></app-header>
+  <app-main></app-main>
 </div>

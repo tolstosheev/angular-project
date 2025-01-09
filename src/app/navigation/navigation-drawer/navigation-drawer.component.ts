@@ -1,10 +1,10 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, ViewChild} from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatDrawer, MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import {AsyncPipe, NgForOf} from '@angular/common';
+import {AsyncPipe, NgClass, NgForOf} from '@angular/common';
 import {SidenavItem} from './sidenav-item';
 import {SidenavItemComponent} from '../sidenav-item/sidenav-item.component';
 import {SidenavContentItemComponent} from '../sidenav-content-item/sidenav-content-item.component';
@@ -28,9 +28,11 @@ import {Observable} from 'rxjs';
     SidenavContentItemComponent,
     ContentComponent,
     NgForOf,
+    NgClass,
   ]
 })
 export class NavigationDrawerComponent {
+  @ViewChild('drawer') drawer!: MatDrawer;
   breakpointService: BreakpointsService= inject(BreakpointsService);
   sidenavList: SidenavItem[] = [
     {icon: 'computer', name: 'Projects'},
@@ -42,7 +44,5 @@ export class NavigationDrawerComponent {
   isLarge$: Observable<boolean> = this.breakpointService.isLarge$;
   isSmall$: Observable<boolean> = this.breakpointService.isSmall$;
   isXSmall$: Observable<boolean> = this.breakpointService.isXSmall$;
-  constructor() {
 
-  }
 }
