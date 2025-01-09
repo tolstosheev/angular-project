@@ -129,6 +129,7 @@ html, body { height: 100%; }
     gap: 20px;
     grid-template-columns: 1fr min-content;
     padding-inline: 15px;
+    margin-left: 50px;
   }
   &__search{
     &__form{
@@ -163,13 +164,27 @@ html, body { height: 100%; }
   }
 }
 .main{
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
   &__title{
-
+    h1{
+      margin: 0;
+    }
+    padding-block: 22px;
   }
   &__info{
+    padding-block: 22px;
     display: grid;
-    grid-template-columns: min-content 1fr min-content;
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+    &--small{
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, min-content);
+    }
+    &--xsmall{
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, min-content);
+    }
     &__details{
       display: grid!important;
       grid-template-columns: repeat(2, 1fr);
@@ -177,18 +192,30 @@ html, body { height: 100%; }
       font-size: 20px;
       font-family: Rubic, sans-serif;
       padding: 22px!important;
+      text-wrap: nowrap;
       &__titles{
         font-weight: 600;
         display: grid;
         grid-template-rows: repeat(3, min-content);
         gap: 8px;
-        text-wrap: nowrap;
       }
       &__value{
         gap: 8px;
         display: grid;
-        text-wrap: nowrap;
         grid-template-rows: repeat(3, min-content);
+        text-align: right;
+      }
+    }
+    .details{
+      &--small{
+        grid-row: 1;
+        grid-column: 2;
+      }
+    }
+    .main-card{
+      grid-column: span 2;
+      &--xsmall{
+        grid-column: span 1;
       }
     }
     &__description{
@@ -200,7 +227,33 @@ html, body { height: 100%; }
         margin: 0;
       }
     }
+  }
+  &__tasc{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-block: 22px;
+    gap: 24px;
+    &--small{
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, min-content);
     }
+    &--xsmall{
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, min-content);
+    }
+  }
+}
+.tasc-container{
+  &__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    place-items: center;
+    &__title{
+    }
+    &__button{
+    }
+  }
 }
 
 

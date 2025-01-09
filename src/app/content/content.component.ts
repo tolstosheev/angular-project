@@ -22,9 +22,7 @@ export class ContentComponent {
   isXSmall$: Observable<boolean> = this.breakpointService.isXSmall$;
   marginLeft$: Observable<string> = combineLatest([this.isSmall$, this.isXSmall$]).pipe(
     map(([isSmall, isXSmall]) => {
-      if (isXSmall) {
-        return '50px';
-      } else if (isSmall) {
+      if (isSmall) {
         return '100px';
       } else {
         return '0';

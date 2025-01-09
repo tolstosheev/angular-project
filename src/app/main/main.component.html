@@ -3,7 +3,7 @@
     <h1>Project name</h1>
   </div>
   <div class="main__info" [ngClass]="{'main__info--small': (isSmall$ | async), 'main__info--xsmall' : (isXSmall$ | async)}">
-    <mat-card>
+    <mat-card class="details-first" [ngClass]="{'details-first--small': (isSmall$ | async), 'details-first--xsmall' : (isXSmall$ | async)}">
       <mat-card-content class="main__info__details">
         <div class="main__info__details__titles">
           <span>Date added:</span>
@@ -17,12 +17,12 @@
         </div>
       </mat-card-content>
     </mat-card>
-    <mat-card>
+    <mat-card class="main-card" [ngClass]="{'main-card--xsmall': (isXSmall$ | async)}">
       <mat-card-content class="main__info__description">
         <p>Менеджер для внутреннего пользования, предназначенный для учета статистики и трекинга задач.</p>
       </mat-card-content>
     </mat-card>
-    <mat-card>
+    <mat-card class="details" [ngClass]="{'details--small': (isSmall$ | async)}">
       <mat-card-content class="main__info__details">
         <div class="main__info__details__titles">
           <span>All tasks:</span>
@@ -36,5 +36,10 @@
         </div>
       </mat-card-content>
     </mat-card>
+  </div>
+  <div class="main__tasc" [ngClass]="{'main__tasc--small': (isSmall$ | async), 'main__tasc--xsmall': (isXSmall$ | async)}">
+    <app-tasc-container *ngFor="let item of TascContainerList"
+                        [title]="item.title">
+    </app-tasc-container>
   </div>
 </div>
