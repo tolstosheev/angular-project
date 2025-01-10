@@ -38,8 +38,8 @@
     </mat-card>
   </div>
   <div class="main__tasc" [ngClass]="{'main__tasc--small': (isSmall$ | async), 'main__tasc--xsmall': (isXSmall$ | async)}">
-    <app-tasc-container *ngFor="let item of TascContainerList"
-                        [title]="item.title">
-    </app-tasc-container>
+    @for (item of TascContainerList; track item) {
+      <app-tasc-container [data]="item"></app-tasc-container>
+    }
   </div>
 </div>

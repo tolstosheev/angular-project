@@ -66,33 +66,20 @@ html, body { height: 100%; }
 .mdc-list {
   padding: 0!important;
 }
-.rail{
-  font-family: Rubic, sans-serif;
-  position: fixed;
+.rail {
   display: grid;
+  height: 100%;
+  place-items: center;
+  position: fixed;
   width: 80px;
-  grid-template-rows: repeat(2, min-content);
-  &--xsmall{
-    width: 40px;
-  }
-  &__header{
-    display: grid;
-    place-items: center;
-    align-items: center;
-    grid-template-rows: auto min-content;
-    padding: 30px 0 200px;
-    gap: 4px;
-    &--xsmall{
-      padding: 23px 0 0;
+    &__main {
+      display: grid;
+      grid-template-rows: auto min-content;
+      place-self: center;
+      gap: 30px;
     }
-  }
-  &__main{
-    display: grid;
-    grid-template-rows: auto min-content;
-    place-self: center;
-    gap: 30px;
-  }
 }
+
 .bar{
   background-color: var(--mat-sys-surface);
   display: flex;
@@ -124,12 +111,16 @@ html, body { height: 100%; }
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   &--small{
     gap: 30px;
+    grid-template-columns: min-content 1fr repeat(2, min-content);
+    padding-inline: 0;
   }
   &--xsmall{
     gap: 20px;
-    grid-template-columns: 1fr min-content;
+    grid-template-columns: min-content 1fr min-content;
     padding-inline: 15px;
-    margin-left: 50px;
+  }
+  &__toggle{
+    place-self: center;
   }
   &__search{
     &__form{
@@ -252,6 +243,41 @@ html, body { height: 100%; }
     &__title{
     }
     &__button{
+    }
+  }
+  .mat-mdc-card-content{
+  }
+  &__content{
+    display: grid!important;
+    grid-auto-rows: min-content;
+    gap: 16px;
+  }
+}
+.tasc{
+  font-family: rubik, sans-serif;
+  &__header{
+    display: grid!important;
+    grid-template-columns: repeat(2, min-content);
+    gap: 10px;
+    text-wrap: nowrap;
+    place-items: center;
+    &__title{
+      font-size: 20px;
+    }
+    &__level{
+      height: 20px!important;
+    }
+  }
+  &__content{
+    display: grid!important;
+    grid-template-columns: repeat(2, 1fr);
+    &__key{
+      display: grid;
+      grid-template-rows: repeat(2, min-content);
+    }
+    &__value{
+      display: grid;
+      grid-template-rows: repeat(2, min-content);
     }
   }
 }

@@ -4,7 +4,7 @@
     type="button"
     aria-label="Toggle sidenav"
     mat-icon-button>
-    <mat-icon aria-label="Side nav toggle icon">{{icon}}</mat-icon>
+    <mat-icon aria-label="Side nav toggle icon">{{data()?.icon}}</mat-icon>
   </button>
-  <span class="item-content__name">{{name}}</span>
+  <span class="item-content__name">{{data()?.name}}</span>
 </div>

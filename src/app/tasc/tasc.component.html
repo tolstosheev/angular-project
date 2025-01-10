@@ -1,1 +1,16 @@
-<p>tasc works!</p>
+<mat-card class="tasc">
+  <mat-card-header class="tasc__header">
+    <mat-card-title class="tasc__header__title">{{data()?.title}}</mat-card-title>
+    <button mat-raised-button class="tasc__header__level">{{data()?.level}}</button>
+  </mat-card-header>
+  <mat-card-content class="tasc__content">
+    <div class="tasc__content__key">
+      <span>Participant:</span>
+      <span>Date added:</span>
+    </div>
+    <div class="tasc__content__value">
+      <span>{{data()?.participant}}</span>
+      <span>{{data()?.date}}</span>
+    </div>
+  </mat-card-content>
+</mat-card>

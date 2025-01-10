@@ -1,4 +1,16 @@
 <div class="header" [ngClass]="{'header--small': (isSmall$ | async), 'header--xsmall' : (isXSmall$ | async)}">
+  @if (!(isLarge$ | async)) {
+    <div class="header__toggle">
+      <button
+        class="header__toggle__button"
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </div>
+  }
   <div class="header__search">
     <mat-form-field class="header__search__form">
       <input matInput type="search">

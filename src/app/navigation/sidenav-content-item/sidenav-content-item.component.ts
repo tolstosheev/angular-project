@@ -1,6 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, input, Input} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
 import {MatIconButton} from "@angular/material/button";
+import {SidenavItem} from '../../../interfaces/sidenav-item';
 
 @Component({
   selector: 'app-sidenav-content-item',
@@ -11,6 +12,5 @@ import {MatIconButton} from "@angular/material/button";
   templateUrl: './sidenav-content-item.component.html'
 })
 export class SidenavContentItemComponent {
-  @Input() icon: string = '';
-  @Input() name: string = '';
+  data = input<SidenavItem>();
 }

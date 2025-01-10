@@ -27,45 +27,29 @@
         </svg>
       </div>
       <mat-nav-list class="sidenav__content__list">
-        <app-sidenav-item
-          *ngFor="let item of sidenavList"
-          [icon]="item.icon"
-          [name]="item.name">
-        </app-sidenav-item>
+        @for (item of SidenavItems; track item) {
+          <app-sidenav-item [data]="item"></app-sidenav-item>
+        }
       </mat-nav-list>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
     @if (!(isLarge$ | async)) {
-      <mat-nav-list class="rail" [ngClass]="{'rail--xsmall': (isXSmall$ | async)}">
-        <div class="rail__header" [ngClass]="{'rail__header--xsmall': (isXSmall$ | async)}">
-          <button
-            class="rail__header__button"
-            type="button"
-            aria-label="Toggle sidenav"
-            mat-icon-button
-            (click)="drawer.toggle()">
-            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-          </button>
-        </div>
-        @if (isSmall$ | async){
-        <div class="rail__main">
-          <app-sidenav-content-item
-            *ngFor="let item of sidenavList"
-            [icon]="item.icon"
-            [name]="item.name">
-          </app-sidenav-content-item>
-        </div>
-        }
-      </mat-nav-list>
+      <div class="rail">
+          @if (isSmall$ | async){
+          <div class="rail__main">
+            @for (item of SidenavItems; track item) {
+              <app-sidenav-content-item [data]="item"></app-sidenav-content-item>
+            }
+          </div>
+          }
+      </div>
     }
     @if (isXSmall$ | async){
       <div class="bar">
-        <app-sidenav-content-item
-          *ngFor="let item of sidenavList"
-          [icon]="item.icon"
-          [name]="item.name">
-        </app-sidenav-content-item>
+        @for (item of SidenavItems; track item) {
+          <app-sidenav-content-item [data]="item"></app-sidenav-content-item>
+        }
       </div>
     }
     <app-content></app-content>

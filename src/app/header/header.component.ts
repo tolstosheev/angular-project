@@ -7,6 +7,7 @@ import {BreakpointsService} from '../../service/breakpoints.service';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {Observable} from 'rxjs';
 import {AsyncPipe, NgClass} from '@angular/common';
+import {SidenavService} from '../../service/sidenav.service';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +25,12 @@ import {AsyncPipe, NgClass} from '@angular/common';
 })
 export class HeaderComponent {
   breakpointService: BreakpointsService= inject(BreakpointsService);
+  isLarge$: Observable<boolean> = this.breakpointService.isLarge$;
   isSmall$: Observable<boolean> = this.breakpointService.isSmall$;
   isXSmall$: Observable<boolean> = this.breakpointService.isXSmall$;
 
+  constructor(private sidenavService: SidenavService) {}
+  toggle() {
+    this.sidenavService.toggle();
+  }
 }
