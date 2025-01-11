@@ -1,4 +1,4 @@
 <div class="content" [ngStyle]="{'margin-left': (marginLeft$ | async), 'margin-bottom': (isXSmall$ | async) ? '100px' : '0', 'padding-inline': (isXSmall$ | async) ? '10px' : '0'}">
-  <app-header></app-header>
+  <app-header (searchEvent)="onSearch($event)"></app-header>
   <app-main></app-main>
 </div>

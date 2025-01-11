@@ -13,8 +13,19 @@
   }
   <div class="header__search">
     <mat-form-field class="header__search__form">
-      <input matInput type="search">
-      <button matPrefix mat-icon-button aria-label="Search" class="header__search__form__button">
+      <input
+        matInput
+        type="search"
+        [(ngModel)]="searchTerm"
+        (keyup.enter)="onSearch()"
+        placeholder="Search..."
+      />
+      <button
+        matPrefix
+        mat-icon-button
+        aria-label="Search"
+        class="header__search__form__button"
+        (click)="onSearch()">
         <mat-icon>search</mat-icon>
       </button>
     </mat-form-field>
@@ -45,4 +56,3 @@
     </div>
   }
 </div>
-

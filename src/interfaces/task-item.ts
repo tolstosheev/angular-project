@@ -3,4 +3,5 @@ export interface TaskItem {
   level: string;
   participant: string;
   date: string;
+  containerTitle: string;
 }

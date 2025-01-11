@@ -1,4 +1,4 @@
-import {Component, input, Input} from '@angular/core';
+import {Component, input, Input, signal} from '@angular/core';
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/material/card';
 import {MatButton} from '@angular/material/button';
 import {TaskItem} from '../../interfaces/task-item';
@@ -15,6 +15,6 @@ import {TaskItem} from '../../interfaces/task-item';
   templateUrl: './tasc.component.html',
 })
 export class TascComponent {
-  data = input<TaskItem>();
+  @Input() data: TaskItem | null = null;
 
 }
